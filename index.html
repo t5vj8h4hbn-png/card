@@ -1,123 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barber Steve | VIP Card</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    }
-    body {
-      background-color: #0b0b0b;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .card-container {
-      background: #141414;
-      border: 1px solid #2a2a2a;
-      border-radius: 24px;
-      padding: 32px 24px;
-      width: 100%;
-      max-width: 380px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-    }
-    .profile-img {
-      width: 110px;
-      height: 110px;
-      border-radius: 50%;
-      border: 2px solid #c5a059;
-      object-fit: cover;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
-    }
-    h1 {
-      font-size: 22px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-    }
-    p.subtitle {
-      color: #c5a059;
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 28px;
-    }
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 12px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: all 0.2s ease;
-    }
-    .btn-gold {
-      background: linear-gradient(135deg, #c5a059 0%, #9e7d3b 100%);
-      color: #000000;
-    }
-    .btn-dark {
-      background: #1f1f1f;
-      color: #ffffff;
-      border: 1px solid #333333;
-    }
-    .footer-text {
-      margin-top: 24px;
-      font-size: 10px;
-      color: #555555;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Steve Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 15px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 400px;
+            background: #141414;
+            border: 1px solid #262626;
+            border-radius: 28px;
+            padding: 30px 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            text-align: center;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 20px auto;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #d4af37;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.35);
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 13px;
+            color: #a1a1a1;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        /* زر الحجز المتميز ببريق ذهبي فاخر */
+        .btn-book {
+            background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            color: #000000;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-book:active {
+            transform: scale(0.98);
+        }
+
+        /* الأزرار الداكنة الفاخرة */
+        .btn-dark {
+            background-color: #222222;
+            color: #ffffff;
+            border: 1px solid #333333;
+        }
+
+        .btn-dark:active {
+            background-color: #2a2a2a;
+            transform: scale(0.98);
+        }
+
+        .btn i {
+            font-size: 18px;
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #555555;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="card-container">
-    <img src="IMG_2406.jpeg" alt="Barber Steve" class="profile-img">
+    <div class="card-container">
+        <!-- صورة الشخص -->
+        <div class="profile-img-container">
+            <img src="https://i.ibb.co/6R7PjB8/barber-photo.jpg" alt="Barber Steve" class="profile-img">
+        </div>
 
-    <h1>BARBER STEVE</h1>
-    <p class="subtitle">MASTER BARBER & STYLING</p>
+        <!-- الاسم والصفة -->
+        <h1 class="name">BARBER STEVE</h1>
+        <p class="title">Master Barber & Styling</p>
 
-    <a href="https://themoroccanbarber.booksy.com/a/" class="btn btn-gold" target="_blank">
-      📅 BOOK APPOINTMENT
-    </a>
+        <!-- الأزرار التفاعلية -->
+        <div class="links-container">
+            
+            <!-- زر حجز المواعيد الذهبي (مرتبط مباشرة بموقع Booksy) -->
+            <a href="http://Johnnybiscuits.booksy.com" target="_blank" class="btn btn-book">
+                <i class="fa-regular fa-calendar-check"></i> BOOK APPOINTMENT
+            </a>
 
-    <a href="tel:+17028091423" class="btn btn-dark">
-      📞 Call Now
-    </a>
+            <!-- زر الاتصال المباشر -->
+            <a href="tel:+17024691179" class="btn btn-dark">
+                <i class="fa-solid fa-phone"></i> Call Now
+            </a>
 
-    <a href="https://wa.me/17028091423" class="btn btn-dark" target="_blank">
-      💬 WhatsApp
-    </a>
+            <!-- زر الواتساب -->
+            <a href="https://wa.me/17024691179" target="_blank" class="btn btn-dark">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
 
-    <a href="https://instagram.com/habibi.barber.vegas" class="btn btn-dark" target="_blank">
-      📷 Instagram (@habibi.barber.vegas)
-    </a>
+            <!-- زر موقع المحل على خرائط جوجل -->
+            <a href="https://www.google.com/maps/search/?api=1&query=5455+S+Fort+Apache+Rd+%23106,+Las+Vegas,+NV+89148" target="_blank" class="btn btn-dark">
+                <i class="fa-solid fa-location-dot"></i> Location / Directions
+            </a>
 
-    <a href="https://maps.apple.com/p/o9mCQ~AfcV~dPTP" class="btn btn-dark" target="_blank">
-      📍 Location / Directions
-    </a>
+        </div>
 
-    <div class="footer-text">
-      TAP TO CONNECT · NFC VIP CARD
+        <div class="footer-text">
+            TAP TO CONNECT - NFC VIP CARD
+        </div>
     </div>
-  </div>
 
 </body>
 </html>
